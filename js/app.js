@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $("#boton-atras").toggle()
 
     $("#boton-atras").click(function() {
         $(".redoblantes,.hardware,.platillos,.baterias").show()
@@ -8,10 +7,8 @@ $(document).ready(function() {
     })
 
     $("#boton-platillos").click(function(){
-        $("#boton-atras").show()
-        $(".redoblantes,.hardware,.baterias").toggle(1000)
-        $("#boton-hardware, #boton-redoblantes, #boton-baterias").toggle(1000)
-            
+        $("#boton-atras").show(1000)
+        $(".redoblantes,.hardware,.baterias, #boton-hardware, #boton-redoblantes, #boton-baterias").toggle(1000)        
     })
 
     $("#boton-hardware").click(function(){

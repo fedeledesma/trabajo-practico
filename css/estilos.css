@@ -1,6 +1,5 @@
 .botonera{
     background-color: rgb(250, 249, 248);
-    height: 40px;
 }
 
 .contenedor{
@@ -8,11 +7,15 @@
 }
 
 .sombreado{
-    border-color: darkred;
-    border: 2px solid #000000;
-    padding: 5px 40px;
+    border: 2px solid #ff0404;
+    padding: 5px;
+    box-shadow:black;
+    
+       
 }
 .tarjeta{
+    text-align: relative;
+    position: relative;
     animation: tarjeta 6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
       
@@ -34,9 +37,14 @@
     width: 120px;
     font-size:16px;
     text-align: center;
+    position: relative;
 }
     
 .pie{
     background-color: darkorange;
-    height: 40px;
 }
+#boton-atras{
+    display: none;
+    
+}
+
