@@ -1,34 +1,36 @@
 $(document).ready(function() {
 
     $("#boton-atras").click(function() {
-        $(".redoblantes,.hardware,.platillos,.baterias").show()
-        $("#boton-platillos, #boton-hardware, #boton-redoblantes, #boton-baterias").show()
-        $("#boton-atras").toggle(1000)
+        $(".redoblantes,.hardware,.platillos,.baterias, #boton-platillos, #boton-hardware, #boton-redoblantes, #boton-baterias").show(500)
+        $("#boton-atras").hide(500)
     })
 
     $("#boton-platillos").click(function(){
-        $("#boton-atras").show(1000)
-        $(".redoblantes,.hardware,.baterias, #boton-hardware, #boton-redoblantes, #boton-baterias").toggle(1000)        
+        $("#boton-atras").show(500)
+        $(".redoblantes,.hardware,.baterias, #boton-platillos, #boton-hardware, #boton-redoblantes, #boton-baterias").toggle(500)        
     })
 
     $("#boton-hardware").click(function(){
-        $("#boton-atras").show(1000)
-        $(".redoblantes,.platillos,.baterias").toggle(1000)   
-        $("#boton-platillos, #boton-redoblantes, #boton-baterias").toggle(1000)  
+        $("#boton-atras").show(500)
+        $(".redoblantes,.platillos,.baterias, #boton-hardware, #boton-platillos, #boton-redoblantes, #boton-baterias").toggle(500)   
     })
 
     $("#boton-redoblantes").click(function(){
-        $("#boton-atras").show(1000)
-        $(".platillos,.hardware,.baterias").toggle(1000)
-        $("#boton-hardware, #boton-platillos, #boton-baterias").toggle(1000)     
+        $("#boton-atras").show(500)
+        $(".platillos,.hardware,.baterias, #boton-redoblantes, #boton-hardware, #boton-platillos, #boton-baterias").toggle(500)     
     })
 
     $("#boton-baterias").click(function(){
-        $("#boton-atras").show(1000)
-        $(".platillos,.hardware,.redoblantes").toggle(1000)  
-        $("#boton-hardware, #boton-redoblantes, #boton-platillos").toggle(1000)   
+        $("#boton-atras").show(500)
+        $(".platillos,.hardware,.redoblantes, #boton-baterias, #boton-hardware, #boton-redoblantes, #boton-platillos").toggle(500)    
     })
 
+    /*/ $("#info").hover(function(){
+        $("#info").hide("2000");   
+        $("#info").show("2000");  
+    })
+    /*/
     
-});    
+});
+   
 
