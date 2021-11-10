@@ -25,11 +25,11 @@ $(document).ready(function() {
         $(".platillos,.hardware,.redoblantes, #boton-baterias, #boton-hardware, #boton-redoblantes, #boton-platillos").toggle(500)    
     })
 
-    /*/ $("#info").hover(function(){
-        $("#info").hide("2000");   
-        $("#info").show("2000");  
+    $("#info").hover(function(){
+        $("#info").hide("200");   
+        $("#info").show("200"); 
     })
-    /*/
+    
     
 });
    
