@@ -1,0 +1,27 @@
+<h1>vista productos</h1>
+ <div class="contenedor m-3 row justify-content-center"></div>
+{{#each products}}
+ 
+        <div class="tarjet col-2 m-4 hardware" id="tarjeta0">
+          <img class="img-fluid" src="./img/pedal-de-bombo-sonor-jojo-mayer-pb.jpg">
+          <div class="texto">
+            <h5>{{title}}</h5>
+            <p id="info0">{{description}}</p>
+            <p>{{price}}</p>
+            <a href=".comprar"><button class="btn btn-dark">Comprar</button></a>
+          </div>
+        </div>
+
+        <div class="tarjet col-2 m-4 platillos" id="tarjeta1">
+                <img class="img-fluid" src="./img/meinlduo.JPG">
+                <div class="texto">
+                  <h5>{{title}}</h5>
+                  <p id="info1">{{description}}</p>
+                  <p>{{price}}</p>
+                  <button href="" class="btn btn-dark">Comprar</button>
+                </div>
+              </div>
+
+
+{{/each}}
+</div>
