@@ -25,10 +25,10 @@ $(document).ready(function() {
         $(".platillos,.hardware,.redoblantes, #boton-baterias, #boton-hardware, #boton-redoblantes, #boton-platillos").toggle(500)    
     })
 
-    $("#info").hover(function(){
-        $("#info").hide("200");   
-        $("#info").show("200"); 
-    })
+    for (var i = 0; i < 15; i++) {
+        $(`#tarjeta${i}`).hover(() => {$(`#info${i}`).show("200")},()=>{$(`#info${i}`).hide("200")});
+    }
+    
     
     
 });
