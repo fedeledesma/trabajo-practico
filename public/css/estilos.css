@@ -22,7 +22,6 @@
 
 .contenedor{
     background-color: darkorange;
-    max-width: 1100px;
     display: flex;
     flex-wrap: wrap;
     align-items: relative;
@@ -32,7 +31,6 @@
 }
 
 .tarjet{
-    height: auto;
     background-color: rgb(250, 249, 248);
     margin: 10px;
     border-color: rgb(31, 29, 29);
@@ -44,8 +42,7 @@
 
 .tarjet:hover{
     box-shadow: 0px 20px 5px 5px rgb(31, 29, 29); 
-    transform: translateY(+3%);
-    
+    transform: translateY(+3%); scale: 1.5;    
 }
 
 .texto{
@@ -67,13 +64,13 @@
 }
 
 .zoom{
+    overflow:hidden;
     transition: all 1s ease;
 }
 
-.zoom:hover{
-    height: 400px;
-    width: 400px;
+.zoom:hover{ 
+    transform:scale(2.5);
     overflow:hidden;
-    position: relative;
+    position:static;
 }
 

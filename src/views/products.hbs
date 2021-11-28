@@ -1,4 +1,12 @@
+{{<nav}}
 <h1>vista productos</h1>
+<form action="products.hbs" method="post">
+<input placeholder="Ingresar Nombre" name="name">
+<input placeholder="Ingresar Precio" type="number">
+<input placeholder="Ingresar Stock" type="number">
+<button type="submit">Crear Producto</button>
+</form>
+
  <div class="contenedor m-3 row justify-content-center"></div>
 {{#each products}}
  

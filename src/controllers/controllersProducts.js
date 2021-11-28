@@ -1,4 +1,3 @@
-
 let products = [
   {
     title:"Pedal Jojo Mayer",
@@ -16,6 +15,8 @@ let products = [
 
 export const verProductos =(req,res) => {
 
-    res.status(200).render('products',{products:products})
-
-  } 
+  res.status(200).render('products',{products:products})
+  products.push(req.body)
+  console.log(products)
+  res.status(200).redirect(`/productos`)
+}
