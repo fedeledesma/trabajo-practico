@@ -1,13 +1,5 @@
-{{<nav}}
-<h1>vista productos</h1>
-<form action="products.hbs" method="post">
-<input placeholder="Ingresar Nombre" name="name">
-<input placeholder="Ingresar Precio" type="number">
-<input placeholder="Ingresar Stock" type="number">
-<button type="submit">Crear Producto</button>
-</form>
-
- <div class="contenedor m-3 row justify-content-center"></div>
+<h1>Hola!!!</h>
+<div class="contenedor m-3 row justify-content-center">
 {{#each products}}
  
         <div class="tarjet col-2 m-4 hardware" id="tarjeta0">
@@ -15,21 +7,19 @@
           <div class="texto">
             <h5>{{title}}</h5>
             <p id="info0">{{description}}</p>
-            <p>{{price}}</p>
-            <a href=".comprar"><button class="btn btn-dark">Comprar</button></a>
+            <p>el precio del producto es: ${{price}} y tiene un stock de: {{stock}} </p>
+            <form action="/carrito?_method=PUT" method="post">
+              <input type="hidden" name="id" value={{id}}>
+              <input type="hidden" name="name" value={{name}}>
+              <input type="hidden" name="price" value={{price}}>
+              <input type="hidden" name="cantidad" max={{stock}}>
+              <button type="submit">Agregar al carrito</button>
+
+            <a href=".comprar"><button class="btn btn-dark">Carrito</button></a>
           </div>
         </div>
-
-        <div class="tarjet col-2 m-4 platillos" id="tarjeta1">
-                <img class="img-fluid" src="./img/meinlduo.JPG">
-                <div class="texto">
-                  <h5>{{title}}</h5>
-                  <p id="info1">{{description}}</p>
-                  <p>{{price}}</p>
-                  <button href="" class="btn btn-dark">Comprar</button>
-                </div>
-              </div>
-
-
-{{/each}}
-</div>
+  {{/each}}
+</div>     
+           
+        
+       

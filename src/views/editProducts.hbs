@@ -1,0 +1,52 @@
+{{<nav}}
+<h1>Ver productos</h1>
+<form action="products.hbs" method="post">
+<input placeholder="Ingresar Nombre" name="name">
+<input placeholder="Ingresar Precio" type="number">
+<input placeholder="Ingresar Stock" type="number">
+<input type="file">
+<button type="submit">Crear Producto</button>
+</form>
+
+<div class="contenedor m-3 row justify-content-center">
+{{#each products}}
+        
+        <input type="hidden"  name="id" value= {{id}}> 
+        <form action="/editProducts?_method=PUT" method="post">
+          <h6>Nombre</h6>
+          <input name="name" placeholder= {{name}}>
+          <h6>Precio</h6>
+          <input name="price" placeholder= {{price}>
+          <h6>Stock</h6>
+          <input name="stock" placeholder= {{stock}}>
+          <button type="submit">Actualizar</button>
+        </form>
+        
+        <div class="tarjet col-2 m-4 hardware" id="tarjeta0">
+          <img class="img-fluid" src="./img/pedal-de-bombo-sonor-jojo-mayer-pb.jpg">
+          <div class="texto">
+            <h5>{{title}}</h5>
+            <p id="info0">{{description}}</p>
+            <p>{{price}}</p>
+            <a href=".comprar"><button class="btn btn-dark">Comprar</button></a>
+          </div>
+        </div>
+        
+        <div class="tarjet col-2 m-4 platillos" id="tarjeta1">
+                <img class="img-fluid" src="./img/meinlduo.JPG">
+                <div class="texto">
+                  <h5>{{title}}</h5>
+                  <p id="info1">{{description}}</p>
+                  <p>{{price}}</p>
+                  <button href="" class="btn btn-dark">Comprar</button>
+                </div>
+              </div>
+
+    <form action="products.hbs ?_method=post">
+  <button type="hidden" name="id" value={{id}}></button>
+  <button type="submit">Borrar Producto</button>  
+</form>          
+
+
+{{/each}}
+</div>
