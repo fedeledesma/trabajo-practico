@@ -22,20 +22,20 @@
         <form action="/editProducts?_method=PUT" method="post">
         <input type="hidden"  name="id" value= {{id}}> 
           <h6>Nombre</h6>
-          <input name="name" placeholder= {{nombre}}>
-          <h6>Pyrecio</h6>
-          <input name="price" placeholder= {{precio}}>
-          <h6>Stock</h6>
-          <input name="stock" placeholder= {{stock}}>
-          <button type="submit">Actualizar</button>
+          <input class="m-1 btn-dark" name="name" placeholder= {{nombre}}>
+          <h6>El Precio del producto es</h6>
+          <input class="m-1 btn-dark" name="price" placeholder= {{precio}}>
+          <h6>Tiene un Stock de</h6>
+          <input class="m-1 btn-dark" name="stock" placeholder= {{stock}}>
+          <button class="m-1 btn-dark" type="submit">Actualizar</button>
         </form>
     <form action="/editProducts?_method=delete">
   <input type="hidden" name="id" value={{id}}>
-  <button type="submit">Borrar Producto</button>  
+  <button class="m-1 btn-dark" type="submit">Borrar Producto</button>  
 </form>
 
-          </div>
         </div>
+</div>
            
 
 

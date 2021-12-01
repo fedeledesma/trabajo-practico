@@ -1,6 +1,6 @@
 import express from 'express'
 import morgan from 'morgan'
-import handlebars  from "express-handlebars"
+import handlebars from 'express-handlebars'
 import path from 'path'
 import routesProducts from './src/routes/routesProducts.js'
 import routesCarts from './src/routes/routesCarts.js'

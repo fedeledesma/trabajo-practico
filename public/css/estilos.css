@@ -32,6 +32,9 @@
 
 .tarjet{
     background-color: rgb(250, 249, 248);
+    overflow: hidden;
+    height: auto;
+    align-items: center;
     margin: 10px;
     border-color: rgb(31, 29, 29);
     border-radius: 10px;
