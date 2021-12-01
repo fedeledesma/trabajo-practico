@@ -1,52 +1,42 @@
-{{<nav}}
+
 <h1>Ver productos</h1>
-<form action="products.hbs" method="post" enctype="multipart/form-data">
-<input placeholder="Ingresar Nombre" name="name">
-<input placeholder="Ingresar Precio" type="number">
-<input placeholder="Ingresar Stock" type="number">
-<input type="file">
-<button type="submit">Crear Producto</button>
+<form action="/editProducts" method="post" enctype="multipart/form-data">
+<input placeholder="Ingresar Nombre" name="nombre">
+<input placeholder="Ingresar Precio" type="number" name="precio">
+<input placeholder="Ingresar Stock" type="number" name="stock">
 <input type="file" name="url" accept="image/x-png,image/gif,image/jpeg">
+<button type="submit">Crear Producto</button>
+
 </form>
 
 <div class="contenedor m-3 row justify-content-center">
 {{#each products}}
-        
-        <input type="hidden"  name="id" value= {{id}}> 
+        <div class="tarjet col-2 m-4 hardware" id="tarjeta0">
+          <img class="img-fluid" src="./img/products/{{url}}">
+          <div class="texto">
+            <h5>{{nombre}}</h5>
+            <p id="info0">Profesional, plegable. Hecho en aluminio, traccion a cinta</p>
+            <p>${{precio}}</p>
+            <p>Stock{{stock}}</p>
+                   
         <form action="/editProducts?_method=PUT" method="post">
+        <input type="hidden"  name="id" value= {{id}}> 
           <h6>Nombre</h6>
-          <input name="name" placeholder= {{name}}>
-          <h6>Precio</h6>
-          <input name="price" placeholder= {{price}>
+          <input name="name" placeholder= {{nombre}}>
+          <h6>Pyrecio</h6>
+          <input name="price" placeholder= {{precio}}>
           <h6>Stock</h6>
           <input name="stock" placeholder= {{stock}}>
           <button type="submit">Actualizar</button>
         </form>
-        
-        <div class="tarjet col-2 m-4 hardware" id="tarjeta0">
-          <img class="img-fluid" src="./img/pedal-de-bombo-sonor-jojo-mayer-pb.jpg">
-          <div class="texto">
-            <h5>{{title}}</h5>
-            <p id="info0">{{description}}</p>
-            <p>{{price}}</p>
-            <a href=".comprar"><button class="btn btn-dark">Comprar</button></a>
+    <form action="/editProducts?_method=delete">
+  <input type="hidden" name="id" value={{id}}>
+  <button type="submit">Borrar Producto</button>  
+</form>
+
           </div>
         </div>
-        
-        <div class="tarjet col-2 m-4 platillos" id="tarjeta1">
-                <img class="img-fluid" src="./img/meinlduo.JPG">
-                <div class="texto">
-                  <h5>{{title}}</h5>
-                  <p id="info1">{{description}}</p>
-                  <p>{{price}}</p>
-                  <button href="" class="btn btn-dark">Comprar</button>
-                </div>
-              </div>
-
-    <form action="products.hbs ?_method=post">
-  <button type="hidden" name="id" value={{id}}></button>
-  <button type="submit">Borrar Producto</button>  
-</form>          
+           
 
 
 {{/each}}

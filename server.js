@@ -2,20 +2,14 @@ import express from 'express'
 import morgan from 'morgan'
 import handlebars  from "express-handlebars"
 import path from 'path'
-import routesProducts from './src/routes/routerProducts.js'
+import routesProducts from './src/routes/routesProducts.js'
 import routesCarts from './src/routes/routesCarts.js'
-import methodOverride from 'method override'
+import methodOverride from 'method-override'
+import fileUpload from 'express-fileupload'
 
 const app = express()
 
-npmapp.use(
-  fileUpload({
-    limits: { fileSize: 50 * 1024 * 1024 },
-    useTempFiles: true,
-   // dir for windows PC
-    tempFileDir: path.join(__dirname, './tmp'),
-  }),
-);
+
 
 const __dirname = path.resolve();
 
@@ -29,6 +23,14 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(express.json()) 
 
+app.use(
+  fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+    useTempFiles: true,
+   // dir for windows PC
+    tempFileDir: path.join(__dirname, './tmp'),
+  }),
+);
 
 
 
