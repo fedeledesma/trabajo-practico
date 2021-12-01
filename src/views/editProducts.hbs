@@ -1,11 +1,12 @@
 {{<nav}}
 <h1>Ver productos</h1>
-<form action="products.hbs" method="post">
+<form action="products.hbs" method="post" enctype="multipart/form-data">
 <input placeholder="Ingresar Nombre" name="name">
 <input placeholder="Ingresar Precio" type="number">
 <input placeholder="Ingresar Stock" type="number">
 <input type="file">
 <button type="submit">Crear Producto</button>
+<input type="file" name="url" accept="image/x-png,image/gif,image/jpeg">
 </form>
 
 <div class="contenedor m-3 row justify-content-center">

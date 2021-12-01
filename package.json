@@ -21,9 +21,12 @@
   "homepage": "https://github.com/fedeledesma/trabajo-practico.git",
   "dependencies": {
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
     "express-handlebars": "^5.3.4",
+    "i": "^0.3.7",
     "method": "^2.0.0",
     "morgan": "^1.10.0",
+    "npm": "^8.1.4",
     "override": "^0.0.1",
     "path": "^0.12.7"
   }

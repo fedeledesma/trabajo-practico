@@ -8,6 +8,15 @@ import methodOverride from 'method override'
 
 const app = express()
 
+npmapp.use(
+  fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+    useTempFiles: true,
+   // dir for windows PC
+    tempFileDir: path.join(__dirname, './tmp'),
+  }),
+);
+
 const __dirname = path.resolve();
 
 app.use (methodOverride('_method'))

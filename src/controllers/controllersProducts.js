@@ -23,6 +23,14 @@ export const crearProductos =(req,res) => {
   products.push(req.body)
   console.log(products)
   res.status(200).redirect('/editProducts')
+  
+  const EDFile = req.files.url
+    EDFile.mv(`./public/img/products/${product.url}`,err => {
+      if(err) return res.status(500).send({ message : err })
+      return res.status(200).render("nofound",{message:"no se encontro el Producto"})
+      })
+  
+  product.url =req.body.name + req.body.id + ".png"
 }
 
 export const borrarProductos =(req,res) => {
