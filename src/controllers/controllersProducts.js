@@ -35,9 +35,11 @@ export const borrarProductos =(req,res) => {
 
 export const update =(req,res) => {
   console.log(req.body)
-  products = products.filter(element => element.id == req.body.id)
-  if(req.body.name) products.name = req.body.name
-  if(req.body.price) products.price = req.body.name
-  if(req.body.stock) products.stock = req.body.name
+  let product = products.find(element => element.id == req.body.id)
+  console.log(product)
+  if(req.body.nombre) product.nombre = req.body.nombre
+  if(req.body.precio) product.precio = req.body.precio
+  if(req.body.stock) product.stock = req.body.stock
+  console.log(product)
   res.status(200).redirect('/editProducts')
 }

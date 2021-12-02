@@ -1,21 +1,20 @@
-<h1>Hola!!!</h>
+<h1 class="texto botonera m-3">Hola!!! Estos son los productos</h1>
 <div class="contenedor m-3 row justify-content-center">
 {{#each products}}
  
         <div class="tarjet col-2 m-4 hardware" id="tarjeta0">
-          <img class="img-fluid" src="./img/pedal-de-bombo-sonor-jojo-mayer-pb.jpg">
+          <img class="img-fluid" src="./img/products/{{url}}">
           <div class="texto">
-            <h5>{{title}}</h5>
-            <p id="info0">{{description}}</p>
-            <p>el precio del producto es: ${{price}} y tiene un stock de: {{stock}} </p>
-            <form action="/carrito?_method=PUT" method="post">
+            <h5>{{nombre}}</h5>
+            <p>El precio es: ${{precio}} Tiene un stock de: {{stock}} </p>
+            <form action="/carrito" method="post">
               <input type="hidden" name="id" value={{id}}>
-              <input type="hidden" name="name" value={{name}}>
-              <input type="hidden" name="price" value={{price}}>
-              <input type="hidden" name="cantidad" max={{stock}}>
-              <button type="submit">Agregar al carrito</button>
-
-            <a href=".comprar"><button class="btn btn-dark">Carrito</button></a>
+              <input type="hidden" name="url" value={{url}}>
+              <input type="hidden" name="nombre" value={{nombre}}>
+              <input type="hidden" name="precio" value={{precio}}>
+              <input class="btn btn-dark" type="number" name="cantidad" min="1" max={{stock}}>
+              <button class="btn btn-dark" type="submit">Agregar al carrito</button>
+              </form>
           </div>
         </div>
   {{/each}}

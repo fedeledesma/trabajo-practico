@@ -1,11 +1,11 @@
 
-<h1>Ver productos</h1>
+<h1 class="texto botonera m-3">Editar productos</h1>
 <form action="/editProducts" method="post" enctype="multipart/form-data">
-<input placeholder="Ingresar Nombre" name="nombre">
-<input placeholder="Ingresar Precio" type="number" name="precio">
-<input placeholder="Ingresar Stock" type="number" name="stock">
-<input type="file" name="url" accept="image/x-png,image/gif,image/jpeg">
-<button type="submit">Crear Producto</button>
+<input class="btn-dark m-2" placeholder="Ingresar Nombre" name="nombre">
+<input class="btn-dark m-2" placeholder="Ingresar Precio" type="number" name="precio">
+<input class="btn-dark m-2" placeholder="Ingresar Stock" type="number" name="stock">
+<input class="btn-dark m-2" type="file" name="url" accept="image/x-png,image/gif,image/jpeg">
+<button class="btn-dark m-2" type="submit">Crear Producto</button>
 
 </form>
 
@@ -13,23 +13,22 @@
 {{#each products}}
         <div class="tarjet col-2 m-4 hardware" id="tarjeta0">
           <img class="img-fluid" src="./img/products/{{url}}">
-          <div class="texto">
+          <div class="texto m-1">
             <h5>{{nombre}}</h5>
-            <p id="info0">Profesional, plegable. Hecho en aluminio, traccion a cinta</p>
             <p>${{precio}}</p>
             <p>Stock{{stock}}</p>
                    
         <form action="/editProducts?_method=PUT" method="post">
         <input type="hidden"  name="id" value= {{id}}> 
-          <h6>Nombre</h6>
-          <input class="m-1 btn-dark" name="name" placeholder= {{nombre}}>
-          <h6>El Precio del producto es</h6>
-          <input class="m-1 btn-dark" name="price" placeholder= {{precio}}>
-          <h6>Tiene un Stock de</h6>
+          <h6 class="texto m-1">Nombre</h6>
+          <input class="m-1 btn-dark" name="nombre" placeholder= {{nombre}}>
+          <h6 class="texto m-1">El Precio es $</h6>
+          <input class="m-1 btn-dark" name="precio" placeholder= {{precio}}>
+          <h6 class="texto m-1">Tiene un Stock de</h6>
           <input class="m-1 btn-dark" name="stock" placeholder= {{stock}}>
           <button class="m-1 btn-dark" type="submit">Actualizar</button>
         </form>
-    <form action="/editProducts?_method=delete">
+    <form action="/editProducts?_method=delete" method="post">
   <input type="hidden" name="id" value={{id}}>
   <button class="m-1 btn-dark" type="submit">Borrar Producto</button>  
 </form>

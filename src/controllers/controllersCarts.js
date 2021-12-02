@@ -1,12 +1,14 @@
 let carts = []
 
 export const verCarts =(req,res) => {
-  res.status(200).render('carrito')
+  res.status(200).render('cart',{carts:carts})
 }
 
 export const addCarts =(req,res) => {
-  console.log (req.body)
-  res.status(200).render('carrito')
+  carts.push(req.body)
+  
+  console.log(carts)
+  res.status(200).redirect('/carrito')
 }
 
 export const deleteCarts =(req,res) => {
