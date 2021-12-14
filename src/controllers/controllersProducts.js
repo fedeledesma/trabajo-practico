@@ -1,10 +1,10 @@
-import Product from "../models/products.js"
+import Products from "../models/products.js"
 
 let products = [
   
 ]
 
-export const verProductos =(req,res) => {
+export const verProductos = async (req,res) => {
   res.status(200).render('products',{products:products})
   try {
     await Product.find({}).lean()
@@ -17,7 +17,7 @@ export const vistaEditar =(req,res)=>{
   res.status(200).render('editProducts',{products:products})
 }
 
-export const crearProductos =(req,res) => {
+export const crearProductos = async (req,res) => {
   let product = req.body
   product.url = product.id + ".jpg"
   try {
