@@ -19,7 +19,7 @@
             <p>Stock{{stock}}</p>
                    
         <form action="/editProducts?_method=PUT" method="post">
-        <input type="hidden"  name="id" value= {{id}}> 
+        <input type="hidden"  name="_id" value= {{_id}}> 
           <h6 class="texto m-1">Nombre</h6>
           <input class="m-1 btn-dark" name="nombre" placeholder= {{nombre}}>
           <h6 class="texto m-1">El Precio es $</h6>
@@ -29,7 +29,7 @@
           <button class="m-1 btn-dark" type="submit">Actualizar</button>
         </form>
     <form action="/editProducts?_method=delete" method="post">
-  <input type="hidden" name="id" value={{id}}>
+  <input type="hidden" name="_id" value={{_id}}>
   <button class="m-1 btn-dark" type="submit">Borrar Producto</button>  
 </form>
 

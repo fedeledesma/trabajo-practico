@@ -1,4 +1,4 @@
-import * as controllerProducts from '../controllers/controllersProducts.js'
+import * as controllerProducts from '../controllers/controllerProducts.js'
 
 
 const routesProducts = (app) => {
