@@ -3,6 +3,7 @@ import morgan from 'morgan'
 import handlebars from 'express-handlebars'
 import path from 'path'
 import routesProducts from './src/routes/routesProducts.js'
+import routesUsers from './src/routes/routesUsers.js'
 import routesCarts from './src/routes/routesCarts.js'
 import methodOverride from 'method-override'
 import fileUpload from 'express-fileupload'
@@ -47,6 +48,7 @@ conectarDB()
 // servidor
 routesProducts(app)
 routesCarts(app)
+routesUsers(app)
 const port = process.env.PORT || `8080`
 app.listen(3000, () => {
     console.log(`el servidor esta corriendo en : http://localhost:${3000}`)
