@@ -1,12 +1,12 @@
 import * as controllerProducts from '../controllers/controllerProducts.js'
-
+import * as middlewareUsers from '../middlewares/middlewaresUsers.js'
 
 const routesProducts = (app) => {
 
-    app.get('/products',controllerProducts.verProductos)
-    app.get('/editProducts',controllerProducts.vistaEditar)
-    app.post('/editProducts',controllerProducts.crearProductos)
-    app.delete('/editProducts',controllerProducts.borrarProductos)
-    app.put('/editProducts',controllerProducts.update)
+    app.get('/products',middlewareUsers.buyer,controllerProducts.verProductos)
+    app.get('/editProducts',middlewareUsers.seller,controllerProducts.vistaEditar)
+    app.post('/editProducts',middlewareUsers.seller,controllerProducts.crearProductos)
+    app.delete('/editProducts',middlewareUsers.seller,controllerProducts.borrarProductos)
+    app.put('/editProducts',middlewareUsers.seller,controllerProducts.update)
 }
 export default routesProducts 
